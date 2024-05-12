@@ -7,7 +7,7 @@
 <meta property="og:title" content="@RemedyC2 ~ <3">
 <meta property="og:description" content="click me baby >_<">
 <script>
-    const titles = ["RemedyC2 on top", "skid me >_<", "hit my site!", "running yo shit", "8 gigs?", "scars.wtf", "skidiot", "RemedyC2", "updates soon"];
+    const titles = ["RemedyC2 on top", "skid me >_<", "hit my site!", "running yo shit", "10 gigs?", "scars.wtf", "skidiot", "RemedyC2", "updates soon"];
 
     function changeTitle() {
         let index = 0;
@@ -48,7 +48,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 31px;
-    width: 35%;
+    width: 50%;
     background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(0px);
     border-radius: 10px;
@@ -160,14 +160,14 @@
         }
     }
     @font-face {
-            font-family: CustomFont;
+            font-family: maybe;
             src: url('path_to_your_font_file.ttf');
         }
 
     .box {
         font-family: CustomFont, Arial, sans-serif;
         display: inline-block;
-        width: 200px;
+        width: 100px;
         height: 100px;
         background-color: rgba(0, 0, 0, 0);
         border-radius: 20px;
@@ -181,34 +181,53 @@
       justify-content: center;
       align-content: center;
       height: 100vh;
-      &__text {
-      color: #fff;
-      font-family: 'Roboto', sans-serif;
-      padding: 1em 2em;
+    }
+
+    .text {
+      color: rgb(255, 0, 0);
+      font-family: "HelpMe";
       text-align: center;
-      font-size: 3.5em;
+      font-size: 2.0em;
+    }
+    
+    @font-face {
+      font-family: 'HelpMe';
+      src: url('fonts/HelpMe.ttf');
       }
-     }
+    .box {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        background-color: #00000000;
+        border: 1px solid #ffffff00;
+        color: #000000;
+        padding: 0px;
+        box-sizing: border-box; 
+        font-family: "HelpMe";
+    }
     
 </style>
 </head>
 <body>
     <div id="button"><b class="next glowing-text">scars.wtf</b></div>
     <div id="blur-box1">
-    <a href="https://scars.wtf/o"></span>@Scars // dev</a>
-    <a href="https://scars.wtf/Remedy"></span>@bluedevil // dev</a>
-    <a href="https://scars.wtf/jello"></span>@jello // lucky</a>
 
-        <h1 class="nerdy-pen__text">priv bio link <3, 
-        <span
+    <h1 class="text">just better, 
+      <span
             class="txt-rotate"
             data-period="1500"
-            data-rotate='[ "RemedyC2 <3", "W devs", "www.swatme.today", "nigger", "Join discord.gg/RemedyC2" ]'></span>
-        </h1>
+            data-rotate='[ "Remedy <3", "penis", "scars.wtf", "13 yr old coder", ".gg/ivi" ]'></span>
 
-    
-
-
+          </h1>
+      
+    <div class="text"> 
+            <a href="https://scars.wtf/dev"></span>@Scars</a>
+            <a href="https://scars.wtf/Remedy"></span>@bluedevil</a>
+            <a href="https://scars.wtf/lucky"></span>@lucky <3</a>
+            <a href="https://scars.wtf/vqpv"></span>@alter </a>
+            <a href="https://scars.wtf/void"></span>@void</a>
 
     <video id="video-background" loop>
         <source src="files/background.mp3" type="audio/mp3">
@@ -222,8 +241,8 @@
             document.getElementById("blur-box1").style.display = "block";
             bgAudio.play();
         });
-</script>
-<script> 
+   </script>
+  <script> 
 var TxtRotate = function(el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
@@ -279,6 +298,73 @@ window.onload = function() {
   css.type = "text/css";
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
-};</script>
+  };</script>
+  <div id="snow"></div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    script.onload = function(){
+      particlesJS("snow", {
+        "particles": {
+          "number": {
+            "value": 100,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "opacity": {
+            "value": 0.7,
+            "random": false,
+            "anim": {
+              "enable": false
+            }
+          },
+          "size": {
+            "value": 2.3,
+            "random": true,
+            "anim": {
+              "enable": false
+            }
+          },
+          "line_linked": {
+            "enable": false
+          },
+          "move": {
+            "enable": true,
+            "speed": 5,
+            "direction": "bottom",
+            "random": true,
+            "straight": true,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": true,
+              "rotateX": 300,
+              "rotateY": 1200
+            }
+          },
+          "interactivity": {
+            "events": {
+              "onhover": {
+                "enable": false
+              },
+              "onclick": {
+                "enable": false
+              },
+              "resize": false
+            }
+          },
+          "retina_detect": true
+        }
+      });
+    }
+    document.head.append(script);
+  });
+  </script> 
 </body>
 </html>
