@@ -256,10 +256,10 @@
 <a href="https://discord.gg/ivi" class="social-icon"><img src="files/dicord.png" /></a>
 <a href="https://t.me/overdosinlol" class="social-icon"><img src="files/globe.png" /></a>
 </div>
-<video id="video-background" loop>
-      <source src="videos/background.mp4" type="video/mp4">
-</video>
-<script>
+  <video id="video-background" loop>
+        <source src="videos/background.mp4" type="video/mp4">
+  </video>
+  <script>
         document.getElementById("button").addEventListener("click", function () {
             var button = this;
             button.style.animation = "fadeout 1s forwards";
@@ -269,8 +269,8 @@
             document.getElementById("video-background").style.display = "block";
             bgAudio.play();
         });
-</script>
-<script> 
+  </script>
+  <script> 
     var TxtRotate = function(el, toRotate, period) {
       this.toRotate = toRotate;
       this.el = el;
@@ -326,6 +326,73 @@
       css.type = "text/css";
       css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
       document.body.appendChild(css);
-};</script>
+  };</script>
+  <div id="snow"></div>
+  <script>
+document.addEventListener('DOMContentLoaded', function(){
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+  script.onload = function(){
+    particlesJS("snow", {
+      "particles": {
+        "number": {
+          "value": 100,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "opacity": {
+          "value": 0.7,
+          "random": false,
+          "anim": {
+            "enable": false
+          }
+        },
+        "size": {
+          "value": 2.3,
+          "random": true,
+          "anim": {
+            "enable": false
+          }
+        },
+        "line_linked": {
+          "enable": false
+        },
+        "move": {
+          "enable": true,
+          "speed": 5,
+          "direction": "bottom",
+          "random": true,
+          "straight": true,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": true,
+            "rotateX": 300,
+            "rotateY": 1200
+          }
+        },
+        "interactivity": {
+          "events": {
+            "onhover": {
+              "enable": false
+            },
+            "onclick": {
+              "enable": false
+            },
+            "resize": false
+          }
+        },
+        "retina_detect": true
+      }
+    });
+  }
+  document.head.append(script);
+});
+</script> 
 </body>
 </html>

@@ -19,9 +19,41 @@
 
     setInterval(changeTitle(), 150);
 </script>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+    :root {
+    --bg-color: #000000;
+    --accent-color: #ffffff;
+    --img-border-color: var(--accent-color);
+    --btn-border-color: rgb(20, 20, 20);
+    --btn-bg: rgb(0, 0, 0);
+    --text-color: #ebadffcf;
+    --text-color-light: #efccfacf;
+    --btn-color: var(--text-color);
+    --btn-hover: src('./files/cursor.png') 16 16, auto !important;
+    --ahref-color: var(--text-color);
+    --icon-color: var(--accent-color);
+    --icon-bg: rgba(255, 255, 255, 0.3);
+    --btn-hover-bg: rgba(98, 0, 255, 0.5);
+    --btn-border: 1px solid var(--btn-border-color);
+    --scroll-bar: var(--accent-color);
+    --selection: rgba(255, 255, 255, 0.705);
+    cursor: url(./files/cursor.png) 16 16, auto !important;
+    } 
+
+
+    main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100svh;
+    padding: 0 1em;
+    cursor: url(./files/cursor.png) 16 16, auto !important;
+    }
     html {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -29,17 +61,20 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: url(./files/cursor.png) 16 16, auto !important;
         }
-
+    a button {
+            color: rgb(183, 0, 255); 
+            text-decoration: none; 
+            cursor: url(./files/cursor.png) 16 16, auto !important;
+        }
     body {
-    background-color:#060707;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-    text-align: center;
-    color: white;
-    }
+    background-color: var(--bg-color);
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    cursor: url(./files/cursor.png) 16 16, auto !important;
+    } 
 
     #blur-box1 {
     display: none;
@@ -50,11 +85,12 @@
     padding: 31px;
     width: 50%;
     background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(1px);
     border-radius: 10px;
     color: rgba(255, 255, 255, 0.774);
     text-align: center;
     animation: fadein 1s forwards;
+    cursor: url(./files/cursor.png) 16 16, auto !important;
     }
 
     #profile-picture {
@@ -97,6 +133,7 @@
     object-fit: cover;
     z-index: -1;
     animation: fadein 1s forwards;
+    cursor: url(./files/cursor.png) 16 16, auto !important;
     }
 
     .glowing-text {
@@ -114,7 +151,9 @@
     transform: translate(-50%, -50%);
     font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
     }
-
+    .cursor {
+      cursor: url(./files/cursor.png) 16 16, auto !important;
+    }
     .social-icon {
     display: inline-block;
     width: 32px;
@@ -124,7 +163,11 @@
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
     transition: transform 0.3s ease-in-out; 
     }
-
+    #realbox {
+    display: flex;
+    flex-direction: row;
+    cursor: url(./files/cursor.png) 16 16, auto !important;
+    }
     .discord-stuff {
     display: inline-block;
     width: 32px;
@@ -134,11 +177,21 @@
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
     transition: transform 0.3s ease-in-out; 
     }
+    button {
+    background-color: var(--btn-bg);
+    border: var(--btn-border);
+    border-radius: 15px;
+    padding: 15px;
+    font-size: clamp(18px, 2vw, 20px);
+    color: var(--btn-color);
+    cursor: url(./files/cursor.png) 16 16, auto !important;
+    font-family: userlol;
+    margin: 5px;
+    transition: all 0.2s ease-in-out;
+    display: inline;
+    }   
 
-    .social-icon:hover {
-    color: #ffffff;
-    transform: scale(1.2);
-    }
+    
 
     @keyframes fadeout {
         from {
@@ -164,17 +217,7 @@
             src: url('path_to_your_font_file.ttf');
         }
 
-    .box {
-        font-family: CustomFont, Arial, sans-serif;
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-        background-color: rgba(0, 0, 0, 0);
-        border-radius: 20px;
-        margin: 10px;
-        text-align: fill;
-        line-height: 100px;
-    }
+
     .nerdy-pen {
       display: flex;
       flex-direction: column;
@@ -191,45 +234,153 @@
     }
     
     @font-face {
+      font-family: 'userlol';
+      src: url('fonts/userlol.ttf');
+    }
+    @font-face {
       font-family: 'HelpMe';
       src: url('fonts/HelpMe.ttf');
       }
+    
+    .maincursor {
+        cursor: url(.files/cursor.png) 16 16, auto !important;  
+      }
+
+
+    
     .box {
         display: inline-block;
         position: absolute;
         text-align: center;
         width: 100px;
         height: 100px;
-        background-color: #00000000;
-        border: 1px solid #ffffff00;
+        background-color: #42282800;
+        border: 1px solid #83717100;
         color: #000000;
         padding: 0px;
         box-sizing: border-box; 
         font-family: "HelpMe";
+        backdrop-filter: blur(1px);
+        border-radius: 10px;
+        text-shadow: 0 0 10px rgb(255, 255, 255);
+        align-items: center;
+        font-family: 'HelpMe'; 
     }
-    
+  
+    button:hover {
+    background-color: var(--btn-hover-bg);
+    border-radius: 15px;
+    padding: 20px;
+    font-size: clamp(20px, 2vw, 25px);
+    cursor: url(./files/cursor.png) 16 16, auto !important;
+    }
+
+    .glass-box {
+      color: rgba(255, 255, 255, 0);
+      text-shadow: 0 0 10px rgb(255, 255, 255);
+      height: 100%;
+      background: rgb(0, 0, 0);
+      border: 2px solid #ffffff;
+      position: absolute;
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px); 
+      z-index: 999;
+      display: inline-block; 
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box; 
+    }
 </style>
 </head>
 <body>
+  <div id="snow"></div>
+  <script>
+document.addEventListener('DOMContentLoaded', function(){
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+      script.onload = function(){
+        particlesJS("snow", {
+          "particles": {
+            "number": {
+              "value": 100,
+              "density": {
+                "enable": true,
+                "value_area": 900
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "opacity": {
+              "value": 1,
+              "random": false,
+              "anim": {
+                "enable": false
+              }
+            },
+            "size": {
+              "value": 2.3,
+              "random": true,
+              "anim": {
+                "enable": false
+              }
+            },
+            "line_linked": {
+              "enable": false
+            },
+            "move": {
+              "enable": true,
+              "speed": 5,
+              "direction": "bottom",
+              "random": true,
+              "straight": true,
+              "out_mode": "out",
+              "bounce": true,
+              "attract": {
+                "enable": true,
+                "rotateX": 300,
+                "rotateY": 2000
+              }
+            },
+            "interactivity": {
+              "events": {
+                "onhover": {
+                  "enable": false
+                },
+                "onclick": {
+                  "enable": false
+                },
+                "resize": false
+              }
+            },
+            "retina_detect": true
+          }
+        });
+      }
+      document.head.append(script);
+    });
+</script>
     <div id="button"><b class="next glowing-text">scars.wtf</b></div>
     <div id="blur-box1">
+    <h1 class="text">#Remedy, 
+        <span
+              class="txt-rotate"
+              data-period="1500"
+              data-rotate='[ "Remedy <3", "cooler then you", "scars.wtf", "luv you", ".gg/ivi" ]'></span>
+  
+            </h1>
+      <div class="realbox">
+              <a href="https://scars.wtf/dev"><button>@scars</button></a>
+              <a href="https://scars.wtf/lucky"><button>@lucky</button></a>
+              <a href="https://scars.wtf/vqpv"><button>@alter</button></a>
+              <a href="https://scars.wtf/voidy"><button>@void</button></a>
 
-    <h1 class="text">just better, 
-      <span
-            class="txt-rotate"
-            data-period="1500"
-            data-rotate='[ "Remedy <3", "penis", "scars.wtf", "13 yr old coder", ".gg/ivi" ]'></span>
-
-          </h1>
-      
-    <div class="text"> 
-            <a href="https://scars.wtf/dev"></span>@Scars</a>
-            <a href="https://scars.wtf/vqpv"></span>@alter</a>
-            <a href="https://scars.wtf/void"></span>@void</a>
-            <a href="https://scars.wtf/lucky"></span>@lucky</a>
-
+            
+          
     <video id="video-background" loop>
-        <source src="files/background.mp3" type="audio/mp3">
+        <source src="files/background.mp3" type="audio/mp3"> 
     </video>
     <script>
         document.getElementById("button").addEventListener("click", function () {
@@ -298,72 +449,6 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
   };</script>
-  <div id="snow"></div>
-  <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-    script.onload = function(){
-      particlesJS("snow", {
-        "particles": {
-          "number": {
-            "value": 100,
-            "density": {
-              "enable": true,
-              "value_area": 800
-            }
-          },
-          "color": {
-            "value": "#ffffff"
-          },
-          "opacity": {
-            "value": 0.7,
-            "random": false,
-            "anim": {
-              "enable": false
-            }
-          },
-          "size": {
-            "value": 2.3,
-            "random": true,
-            "anim": {
-              "enable": false
-            }
-          },
-          "line_linked": {
-            "enable": false
-          },
-          "move": {
-            "enable": true,
-            "speed": 5,
-            "direction": "bottom",
-            "random": true,
-            "straight": true,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": true,
-              "rotateX": 300,
-              "rotateY": 1200
-            }
-          },
-          "interactivity": {
-            "events": {
-              "onhover": {
-                "enable": false
-              },
-              "onclick": {
-                "enable": false
-              },
-              "resize": false
-            }
-          },
-          "retina_detect": true
-        }
-      });
-    }
-    document.head.append(script);
-  });
-  </script> 
+
 </body>
 </html>
